@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { AppState } from '../reducers/main.reducer';
 import MainActions from '../actions/main.actions';
-import MainContainer from'../modules/main.container';
+import MainContainer from'../modules/components/main.component';
 
 
 const mapStateToProps = (state: AppState) => (
