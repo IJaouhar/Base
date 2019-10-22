@@ -5,7 +5,7 @@ const MainActions = {
   getCampaigns: () => ({
     type: "MAIN::FETCH_GET_CAMPAIGNS",
   }),
-  getCampaignsSuccess: (campaigns: Array<string>) => ({
+  getCampaignsSuccess: (campaigns: Array<object>) => ({
     type: "MAIN::FETCH_GET_CAMPAIGNS_SUCCESS",
     payload: {
       campaigns,

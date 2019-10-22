@@ -1,7 +1,7 @@
 const campaignsPaths = {
-  getCampaigns: "/campaigns",
-  postCampaigns: "/campaigns/create",
-  deleteCampaigns: "/campaigns",
+  getCampaigns: "http://localhost:3000/campaigns",
+  postCampaigns: "http://localhost:3000/campaigns/create",
+  deleteCampaigns: "http://localhost:3000/campaigns",
 }
 
 export default campaignsPaths;

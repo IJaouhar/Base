@@ -19,8 +19,8 @@ export default function getCampaign(
     mergeMap((actionRequest: getCampaignRequest) => ajax.get(campaignsPaths.getCampaigns
     ).pipe(
       map((response: AjaxResponse) => {
-        console.log(response);
-        return MainActions.getCampaignsSuccess(response as any);
+        const campaigns: Array<object> = response.response
+        return MainActions.getCampaignsSuccess(campaigns);
       }),
       catchError((error: AjaxError) => of({
         type: 'MAIN::ERROR_GET_CAMPAIGNS',
