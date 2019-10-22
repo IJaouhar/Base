@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import { Provider } from 'react-redux';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './reducers/main.reducer';
 import { MainStore } from './store/main.strore';
@@ -20,6 +20,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Switch>
+        <Route exact path="/" render={() => (
+          <Redirect to="/campaigns" />
+        )} />
         <Route path="/campaigns" exact component={MainStore} />
       </Switch>
     </Router>
