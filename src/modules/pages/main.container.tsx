@@ -4,6 +4,8 @@ import CampaignsComponent from './components/campaigns.component';
 
 interface IProps {
   getCampaigns: Function,
+  createCampaigns: Function,
+  deleteCampaigns: Function,
   campaigns: Array<object>,
 }
 
@@ -13,7 +15,7 @@ class MainContainer extends React.Component<IProps, {}> {
     getCampaigns()
   }
   render() {
-    const { campaigns } = this.props;
+    const { campaigns, deleteCampaigns } = this.props;
     const arrOfCampaigns: Array<any> = [];
     let campaign = null;
 
@@ -22,10 +24,12 @@ class MainContainer extends React.Component<IProps, {}> {
         console.log(camp);
         campaign = 
         <CampaignsComponent
+        id={camp.id}
         name={camp.name}
         url={camp.url}
         category={camp.category}
         date={camp.createdAt}
+        deleteCampaigns={deleteCampaigns}
         />
         arrOfCampaigns.push(campaign);
       });

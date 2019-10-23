@@ -17,10 +17,22 @@ const MainActions = {
       campaignInfo,
     },
   }),
+  createCampaignsSuccess: (response: any) => ({
+    type: "MAIN::FETCH_POST_CAMPAIGNS_SUCCESS",
+    payload: {
+      response,
+    },
+  }),
   deleteCampaigns: (id: string) => ({
     type: "MAIN::FETCH_DELETE_CAMPAIGN",
     payload: {
       id,
+    },
+  }),
+  deleteCampaignsSuccess: (response: any) => ({
+    type: "MAIN::FETCH_DELETE_CAMPAIGN_SUCCESS",
+    payload: {
+      response,
     },
   }),
 };
