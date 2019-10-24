@@ -21,7 +21,6 @@ export default function deleteCampaigns(
   return action$.pipe(
     ofType('MAIN::FETCH_DELETE_CAMPAIGN'),
     mergeMap((actionRequest: any) => {
-      console.log(actionRequest.payload);
       return ajax.delete(campaignsPaths.deleteCampaigns +
     actionRequest.payload.id,
     ).pipe(

@@ -1,0 +1,50 @@
+.flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-campaign-form {
+  width: 100vw;
+  height: 80vh;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  font-size: 20px;
+
+  .form-container {
+    width: 50vw;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .form-input {
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .text-form-box {
+    width: 50%;
+  }
+
+  .chooser-box {
+    margin-left: 20px;
+    width: 100px;
+  }
+
+  .btn-register {
+    color: red;
+    font-weight: 900;
+    font-size: 20px;
+    background-color: white;
+    padding: 3px 50px;
+  }
+
+  .red {
+    background-color: red;
+  }
+}

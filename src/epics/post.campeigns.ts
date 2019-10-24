@@ -20,8 +20,10 @@ export default function createCampaigns(
 ): Observable<Action> {
   return action$.pipe(
     ofType('MAIN::FETCH_POST_CAMPAIGNS'),
-    mergeMap((actionRequest: any) => ajax.post(campaignsPaths.postCampaigns,
-    actionRequest.payload,
+    mergeMap((actionRequest: any) => {
+      console.log(actionRequest.payload);
+      return ajax.post(campaignsPaths.postCampaigns,
+    actionRequest.payload.campaignInfo,
     ).pipe(
       map((response: AjaxResponse) => {
         console.log(response)
