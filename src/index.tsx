@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './reducers/main.reducer';
-import { MainStore } from './store/main.strore';
+import { MainStore, CreateStore } from './store/main.strore';
 import rootEpic from './epics';
 import { createBrowserHistory } from 'history';
 
@@ -24,6 +24,7 @@ ReactDOM.render(
           <Redirect to="/campaigns" />
         )} />
         <Route path="/campaigns" exact component={MainStore} />
+        <Route path="/create" exact component={CreateStore} />
       </Switch>
     </Router>
   </Provider>,

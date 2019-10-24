@@ -19,11 +19,11 @@ export default function deleteCampaigns(
 ): Observable<Action> {
   console.log('object');
   return action$.pipe(
-    ofType('MAIN::FETCH_GET_CAMPAIGNS'),
+    ofType('MAIN::FETCH_DELETE_CAMPAIGN'),
     mergeMap((actionRequest: any) => {
-      console.log(actionRequest);
-      return ajax.delete(campaignsPaths.deleteCampaigns,
-    actionRequest.payload,
+      console.log(actionRequest.payload);
+      return ajax.delete(campaignsPaths.deleteCampaigns +
+    actionRequest.payload.id,
     ).pipe(
       map((response: AjaxResponse) => {
         console.log(response)
