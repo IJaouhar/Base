@@ -1,7 +1,9 @@
 import * as React from 'react';
 import HeaderComponent from '../header.layout';
-import { Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import './create.container.scss';
+import { History } from 'history';
+import { Link } from 'react-router-dom';
 
 
 interface IProps {
@@ -30,7 +32,7 @@ class CreateContainer extends React.Component<IProps, IState> {
       categoryEmpty: '',
     }
   }
-  
+
   handleClick = () => {
     const { createCampaigns } = this.props;
     const { nameCampaign, url, category } = this.state;
@@ -44,14 +46,19 @@ class CreateContainer extends React.Component<IProps, IState> {
     }
     if (category === '') {
       this.setState({ categoryEmpty: 'red' })
-    } 
-    if (nameCampaign !== '' &&  url !== '' && category !== '...'){
+    }
+    if (nameCampaign !== '' && url !== '' && category !== '...') {
       campaignInfo = {
         name: nameCampaign,
         url: url,
         category: category,
       }
-      createCampaigns(campaignInfo)
+      createCampaigns(campaignInfo);
+      this.setState({
+        nameCampaign: '',
+        url: '',
+        category: '',
+      })
     }
   }
 
@@ -61,10 +68,17 @@ class CreateContainer extends React.Component<IProps, IState> {
   }
 
   render() {
-    const { nameCampaign, url, category,nameCampaignEmpty, urlEmpty, categoryEmpty } = this.state;
+    const { nameCampaign, url, category, nameCampaignEmpty, urlEmpty, categoryEmpty } = this.state;
     return (
       <div>
         <HeaderComponent />
+        <div className="back-button-container">
+          <Link to="campaigns">
+          <Button type="submit" className="go-to-campaigns">
+            Go back to campaigns
+            </Button>
+        </Link>
+        </div>
         <div className="create-campaign-form flex-column">
           <Form className="form-container flex-column">
             <Form.Group controlId="form" className='text-form-box'>

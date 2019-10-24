@@ -17,7 +17,6 @@ interface deleteCampaign {
 export default function deleteCampaigns(
   action$: Observable<Action>,
 ): Observable<Action> {
-  console.log('object');
   return action$.pipe(
     ofType('MAIN::FETCH_DELETE_CAMPAIGN'),
     mergeMap((actionRequest: any) => {
@@ -25,7 +24,6 @@ export default function deleteCampaigns(
     actionRequest.payload.id,
     ).pipe(
       map((response: AjaxResponse) => {
-        console.log(response)
         const campaigns: Array<object> = response.response
         return MainActions.getCampaignsSuccess(campaigns);
       }),

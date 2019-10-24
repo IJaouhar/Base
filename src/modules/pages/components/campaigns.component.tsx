@@ -16,11 +16,11 @@ class CampaignsComponent extends React.Component<IProps, {}> {
 
     return (
       <ul className="campaign-card-container">
-        <li>{name}</li>
-        <li>{url}</li>
-        <li>{category}</li>
-        <li>{date}</li>
-        <li><button onClick={() => {deleteCampaigns(id)}}></button></li>
+        <li className="text-block">{name}</li>
+        <li className="text-block text-url">{url}</li>
+        <li className="text-block">{category}</li>
+        <li className="text-block">{date}</li>
+        <li className="text-block"><button className="delete-button" onClick={() => {deleteCampaigns(id)}}>Remove</button></li>
       </ul>
     );
   }

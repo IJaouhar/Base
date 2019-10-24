@@ -1,6 +1,9 @@
 import * as React from 'react';
 import HeaderComponent from '../header.layout';
 import CampaignsComponent from './components/campaigns.component';
+import "./main.container.scss";
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 interface IProps {
   getCampaigns: Function,
@@ -21,9 +24,9 @@ class MainContainer extends React.Component<IProps, {}> {
 
     if (campaigns) {
       campaigns.forEach((camp: any, index) => {
-        console.log(camp);
         campaign = 
         <CampaignsComponent
+        key={index}
         id={camp.id}
         name={camp.name}
         url={camp.url}
@@ -39,7 +42,16 @@ class MainContainer extends React.Component<IProps, {}> {
     return (
       <div>
         <HeaderComponent />
-        {arrOfCampaigns}
+        
+        <div className="campaigns-box">
+          <Link to="create">
+            <Button type="submit" className="create-campaign">
+              Create new campaign
+            </Button>
+          </Link>
+          {arrOfCampaigns}
+        </div>
+        
       </div>
     );
   }

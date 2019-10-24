@@ -1,0 +1,16 @@
+.campaigns-box {
+  width: 100vw;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .create-campaign {
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: 900;
+  }
+}
